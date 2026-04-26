@@ -3,6 +3,8 @@
 import mediumZoom from 'medium-zoom'
 import { useEffect, useRef } from 'react'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 export function ImageZoom({ src, alt, width = 600 }: { src: string; alt?: string; width?: number }) {
   const imgRef = useRef<HTMLImageElement>(null)
 
@@ -18,7 +20,7 @@ export function ImageZoom({ src, alt, width = 600 }: { src: string; alt?: string
   return (
     <img
       ref={imgRef}
-      src={src}
+      src={`${basePath}${src}`}
       alt={alt}
       width={width}
       style={{ cursor: 'zoom-in' }}
