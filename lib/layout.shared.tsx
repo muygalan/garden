@@ -1,5 +1,4 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import Image from 'next/image';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -7,13 +6,12 @@ export function baseOptions(): BaseLayoutProps {
   return {
     nav: {
       title: (
-        <Image
+        <img
           src={`${basePath}/images/static/avatar.png`}
           alt="Joshua Galan"
           width={32}
           height={32}
           style={{ borderRadius: '50%' }}
-          unoptimized
         />
       ),
     },
